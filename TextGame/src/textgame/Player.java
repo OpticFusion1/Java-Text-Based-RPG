@@ -34,6 +34,9 @@ public class Player
     }
       
   }
+  public void setName(String name){
+    this.name = name;
+  }
   public void addItem(Object item)
   {
     items.add(item);
@@ -41,6 +44,11 @@ public class Player
   public void removeItem(Object item)
   {
     items.remove(item);
+  }
+  public boolean containsHealth(){
+    if(items.contains(health))
+      return true;
+    return false;
   }
   //--Increases the attack of the player if a weapon is equiped
   public int increaseAttack(int newAttack)
