@@ -19,7 +19,7 @@ public class Enemy {
     this.health = health;
     this.attack = attack;
   }
-  
+  //input validation
   public boolean inputValid(int input){
     if(input != 0)
       return true;
@@ -28,6 +28,7 @@ public class Enemy {
       return false;
     }
   }
+  //decreases health of enemy
   public int decreaseHealth(int attackDamage)
   {
     if(inputValid(attackDamage))

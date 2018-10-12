@@ -5,13 +5,16 @@
  */
 package textgame;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Zachery Soles
  */
 public class Level{
   Object item, weapon, enemy;
-  String name, description, choice1, choice2, choice3, choice4, choice5;
+  String name, description;
+  ArrayList choices = new ArrayList<>();
   
   public Level(String name, Object weapon, Object item, Object enemy)
   {
@@ -20,61 +23,59 @@ public class Level{
     this.item = item;
     this.enemy = enemy;
   }
+  //sets descrition for level
   public void setDescription(String description){
     this.description = description;
   }
-  public void setChoice1(String choice1){
-    this.choice1 = choice1;
+  //adds choices to arraylist for the level
+  public void addChoice(String choice){
+    choices.add(choice);
   }
-  public void setChoice2(String choice2){
-    this.choice2 = choice2;
+  //clears all the choices
+  public void clearChoices(){
+    choices.clear();
   }
-  public void setChoice3(String choice3){
-    this.choice3 = choice3;
+  //prints the choices
+  public void getChoices(){
+    System.out.println(choices);
   }
-  public void setChoice4(String choice4){
-    this.choice4 = choice4;
+  //return the number of choices
+  public int getNumChoices(){
+    return choices.size();
   }
-   public void setChoice5(String choice5){
-    this.choice5 = choice5;
-  }
-  public String getChoice5(){
-    return choice5;
-  }
-  public String getChoice1(){
-    return choice1;
-  }
-  public String getChoice2(){
-    return choice2;
-  }
-  public String getChoice3(){
-    return choice3;
-  }
-  public String getChoice4(){
-    return choice4;
-  }
+  //return the name of the level
   public String getName(){
     return name;
   }
-  public String getDescription(){
-    return description;
+  //prints the description of the level
+  public void getDescription(){
+    System.out.println(description);
   }
-  
+  //removes a given choice from the array list
+  public void removeChoice(int choice){
+    choices.remove(choice-1);
+  }
+  //return the item in the level
   public Object getItem(){
     return item;
   }
+  //returns the weapon in the level
   public Object getWeapon(){
     return weapon;
   }
+  //returns the enemy in the level
   public Object getEnemy(){
     return enemy;
   }
+  //picks up item
   public void pickUpItem(){
     item = null;
   }
+  //picks up weaoon
   public void pickUpWeapon(){
     weapon = null;
   }
+  //kills enemy
   public void killEnemy(){
     enemy = null;
   }

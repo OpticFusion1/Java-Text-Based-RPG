@@ -17,10 +17,12 @@ public class Item {
     this.name = name;
     this.health = health;
   }
+  //gets name of item
   public String getName()
   {
     return name;
   }
+  //gets the health property of the item
   public int getHealth()
   {
     return health;

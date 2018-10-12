@@ -34,24 +34,28 @@ public class Player
     }
       
   }
+  //sets name of hero
   public void setName(String name){
     this.name = name;
   }
+  //adds item to hero's array list
   public void addItem(Object item)
   {
     items.add(item);
   }
+  //removes item from heros array list
   public void removeItem(Object item)
   {
     items.remove(item);
   }
+  //checks to see if potions are carried
   public boolean containsHealth(){
     if(items.contains(health))
       return true;
     return false;
   }
   //--Increases the attack of the player if a weapon is equiped
-  public int increaseAttack(int newAttack)
+  public int setAttack(int newAttack)
   {
     if(inputValid(newAttack))
       attack = newAttack;
